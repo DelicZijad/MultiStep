@@ -1,0 +1,24 @@
+@use '../config' as c;
+.summary{
+    padding:1rem ;
+    border-radius: 10px;
+    &--main{
+        padding-bottom: 1rem;
+        border-bottom: 1px solid map-get($map: c.$colors, $key:LightGray);
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &--extra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &--total{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+    }
+}

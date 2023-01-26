@@ -1,0 +1,21 @@
+@use '../config' as c;
+.content{
+    height: 100%;
+    @include c.desktop{
+       width: 65%;
+       background-color: white;
+       border-radius: 10px;
+       margin-inline: auto;
+      height: 80%;
+      padding: 1rem;
+      padding-right: 5rem;
+      display: flex;
+     gap: 5rem;
+    }
+ &--wrapper{
+  width: 100%;
+  display: grid;
+  padding-block: 1.5rem 1rem;
+  place-items: center;
+ }
+}

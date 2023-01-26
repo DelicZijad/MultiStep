@@ -1,0 +1,51 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: initial;
+    color: inherit;
+    font-weight: inherit;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 100ms;
+}
+body{
+    line-height: 1.5;
+}
+.App{
+    height: 100vh;
+    position: relative;
+    display: grid;
+   place-items: center;
+  
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+button{
+    display: block;
+    border: inherit;
+    outline: none;
+    cursor: pointer;
+    background-color: inherit;
+&:disabled,&:disabled:hover{
+    background-color: gray;
+    cursor: not-allowed;
+}
+}
+input{
+    border: inherit;
+    outline: none;
+    display: block;
+    cursor: pointer;
+}
+label{
+    display: block;
+}
+.hide{
+    display: none;
+}

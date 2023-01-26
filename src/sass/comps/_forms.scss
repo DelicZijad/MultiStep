@@ -1,0 +1,43 @@
+@use '../config' as c;
+.forms{
+    position: absolute;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 2rem 1.5rem;
+    border-radius: 5px;
+@include c.desktop{
+    position: static;
+    transform: translate(0);
+    width: 100%;
+    padding: 0;
+}
+&--header{
+    margin-bottom: 1.5rem;
+}
+}
+
+.initialForm{
+    &--label{
+        margin-bottom: 0.25rem;
+    }
+    &--input{
+        padding: 0.75rem;
+        border-radius: 5px;
+        width: 100%;
+        &:focus{
+            border-color: map-get($map: c.$colors, $key:MarineBlue );
+        }
+    }
+    &--control{
+        position: relative;
+        margin-bottom: 1rem;
+    }
+    &--error{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+

@@ -1,0 +1,38 @@
+@use '../config' as c;
+
+.extra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &:hover,&:focus{
+        border: 2px solid map-get($map: c.$colors ,$key:PurplishBlue);
+    }
+    *{
+        cursor: pointer;
+    }
+    input{
+        accent-color:map-get($map:c.$colors,$key:PurplishBlue ) ;
+        height: 1rem;
+        width: 1rem;
+        padding: 0.25rem;
+    }
+    &--main{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    &--price{
+        font-size: 0.875rem;
+        @include c.desktop{
+            font-size: 1rem;
+        }
+    }
+
+    button{
+        border: none;
+    }
+}

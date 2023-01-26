@@ -1,0 +1,86 @@
+@use 'sass:map';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+$weights: (
+    regular:400,
+    semi:500,
+    bold:700
+);
+$fonts:(
+    100:0.75rem,
+    200:0.875rem,
+    300:1rem,
+    400:1.125rem,
+    500:1.25rem,
+    600:1.5rem,
+    700:1.75rem,
+    800:2rem,
+    900:2.25rem,
+);
+$colors:(
+MarineBlue: hsl(213, 96%, 18%),
+PurplishBlue: hsl(243, 100%, 62%),
+PastelBlue: hsl(228, 100%, 84%),
+LightBlue: hsl(206, 94%, 87%),
+StrawberryRed: hsl(354, 84%, 57%),
+CoolGray: hsl(231, 11%, 63%),
+LightGray: hsl(229, 24%, 87%),
+Magnolia: hsl(217, 100%, 97%),
+Alabaster: hsl(231, 100%, 99%),
+White: hsl(0, 0%, 100%),
+Black:hsl(0,0%,0%)
+);
+@each $name,$color in $colors{
+    .clr-#{$name}{
+        color: $color;
+    }
+    .bg-#{$name}{
+        background-color: $color;
+    }
+    .bdr1-#{$name},.bdr-#{$name}:hover{
+        border:1px solid $color;
+    }
+    .bdr2-#{$name},.bdr-#{$name}:hover{
+        border:2px solid $color;
+    }
+
+};
+@each $name,$weight in $weights {
+    .fw-#{$name}{
+        font-weight: $weight;
+    }
+};
+@each $name,$size in $fonts {
+    .fs-#{$name}{
+        font-size: $size;
+    }
+};
+@mixin desktop() {
+    @media screen and (min-width:1024px) {
+        @content;
+    }
+};
+
+.fs-app{
+    font-size: map-get($map: $fonts, $key: 200);
+    @include desktop{
+        font-size: map-get($map: $fonts, $key: 300);
+    }
+}
+
+.fs-heading-primary{
+        font-size: map-get($map: $fonts, $key: 800);
+        
+            @include desktop {
+                font-size: map-get($map: $fonts, $key: 900);
+            }
+}
+.fs-heading-secondary{
+        font-size: map-get($map: $fonts, $key: 400);
+        
+            @include desktop {
+                font-size: map-get($map: $fonts, $key: 500);
+            }
+}
+.fs-heading-mid{
+        font-size: map-get($map: $fonts, $key: 400);
+}

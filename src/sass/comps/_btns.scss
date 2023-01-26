@@ -1,0 +1,44 @@
+@use '../config' as c;
+.btns{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    justify-content: space-between;
+   width: 100%;
+   padding: 1rem;
+   @include c.desktop{
+    position: static;
+    align-self: flex-end;
+   }
+   
+   &--back{
+    color: map-get($map: c.$colors, $key:CoolGray );
+    &:hover{
+        color: map-get($map: c.$colors, $key: MarineBlue);
+    }
+   }
+   &--next{
+    $color: map-get($map: c.$colors, $key: MarineBlue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    background-color: $color;
+    color: white;
+    grid-column: 2;
+    &:hover{
+    background-color: lighten($color, $amount: 10%)
+    }
+   }
+   &--confirm{
+    $color: map-get($map: c.$colors, $key: PurplishBlue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    background-color: $color;
+    color: white;
+    grid-column: 2;
+    &:hover{
+    background-color: lighten($color, $amount: 10%)
+    }
+   }
+}

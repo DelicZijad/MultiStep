@@ -1,0 +1,15 @@
+.final{
+    display: grid;
+    place-items: center;
+padding-block: 2rem;
+
+&--image{
+    margin-bottom: 1rem;
+}
+h2{
+    margin-bottom: 1rem;
+}
+p{
+    text-align: center;
+}
+}
